@@ -6,6 +6,7 @@ At a high-level, this project can be visualized throught the following diagram:
 <img width="2141" height="511" alt="ProcessDiagram drawio" src="https://github.com/user-attachments/assets/ee0ae6e4-dc4a-49af-b871-86ccf15bc1ec" />
 
 ## Folder structure
+```md
 tunestream_etl_pipeline/
 │
 ├── dags/
@@ -20,6 +21,7 @@ tunestream_etl_pipeline/
 │
 ├── .env                            # Environment variables for Docker.
 └── docker-compose.yaml             # Defines the Docker services (Airflow, Postgres, etc.).
+```
 
 
 
