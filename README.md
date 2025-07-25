@@ -19,6 +19,8 @@ root_folder(airflow_assignment_v2)/
 ├── sql/
 │   └── create_tables.sql           # SQL script to create the database schema.
 │
+├── screenshots/                    # All the accompanied screenshots here. 
+│
 ├── .env                            # Environment variables for Docker.
 └── docker-compose.yaml             # Defines the Docker services (Airflow, Postgres, etc.).
 ```
