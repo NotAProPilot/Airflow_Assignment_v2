@@ -191,5 +191,13 @@ import os
 Once you have done all of the above, head to `http://localhost:8080` to access Airflow. From the home screen, visit the Admin > Connection tab (like this):
 <img width="1692" height="391" alt="image" src="https://github.com/user-attachments/assets/2fc9c514-c35f-406e-a370-dc8ef330bc8d" />
 
-To add a new connection, do as follows:
-1. 
+To add a new connection, click on the + button, and fill information as follows:
+| Field | Value | Notes |
+| :--- | :--- | :--- |
+| **Connection Id** | `postgres_default` | Must match the ID used in your DAG code. |
+| **Connection Type** | `Postgres` | Select from the dropdown menu. |
+| **Host** | `postgres` | **Crucial**: This is the Docker network alias for the database container. Do not use `localhost`. |
+| **Schema** | `airflow` | The default database name created by the Docker Compose setup. |
+| **Login** | `airflow` | The default username. |
+| **Password** | `airflow` | The default password. |
+| **Port** | `5432` | The standard PostgreSQL port. |
