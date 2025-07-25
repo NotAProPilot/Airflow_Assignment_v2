@@ -19,15 +19,7 @@ To ensure the pipeline is robust and produces consistent results, several modifi
 The initial `INSERT` queries would append data on every DAG run, leading to massive duplication. To fix this, the pipeline was made idempotent by clearing tables before loading new data. Because of that, a `TRUNCATE TABLE public.staging_...;` command was added before loading data in functions for all tables.
 
 ### 1.2: Unique Constraint Compliance
-During testing, two dimension tables failed with UniqueViolation errors, which required more advanced SQL logic to resolve.
-
-`users` Table: The source staging_events table can contain multiple records for the same userid if a user changes their subscription level (e.g., from 'free' to 'paid'). A simple SELECT DISTINCT is not sufficient.
-
-Solution: The query was rewritten to use a ROW_NUMBER() window function, partitioned by userid and ordered by the event timestamp (ts). This allows us to select only the most recent record for each user, guaranteeing a unique entry.
-
-`time` Table: The source songplays table can contain multiple song play events that occur at the exact same timestamp. Since start_time is the primary key of the time table, this caused a unique constraint violation.
-
-Solution: The query was modified to select from a subquery that gets only the DISTINCT start_time values from the songplays table, ensuring that each timestamp is inserted only once.
+During testing, two dimension tables failed with UniqueViolation errors, which required ✨some✨ creativity to solve. 
 
 | Table | Problem | Solution |
 | :---- | :--- | :--- |
