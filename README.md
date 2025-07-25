@@ -146,6 +146,31 @@ with DAG(
   # Set interval, time, owner here....
 ) as DAG
 
-#
+# Setting up tasks in DAG
+
+# Empty start/end operator:
+begin_execution = EmptyOperator(
+  task_id='Begin_execution'
+)
+
+# Loading data into staging tables
+# For this we will use PythonOperator() since we write insert statements as Python functions
+stage_songs = PythonOperator(
+        task_id='Stage_songs',
+        python_callable=load_songs_into_table,
+        op_kwargs={'postgres_conn_id': 'postgres_default'}
+    )
+
+# Loading data into fact and dimension tables
+# For this we will use PostgresOperator to use the SQL class at the top of the file:
+load_songplay_fact_table = PostgresOperator(
+        task_id = 'Load_songplays_fact_table',
+        postgres_conn_id = 'postgres_default',
+        sql=SqlQueries.songplay_table_insert
+)
+
+# Setting up dependencies
+task1 >> task2
+task2 >> [task3, task4]
     
 ```
