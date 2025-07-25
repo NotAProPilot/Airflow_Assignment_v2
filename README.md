@@ -235,3 +235,28 @@ After that, just clone this repo, `cd` into the folder, and `docker-compose up a
 
 Finally, execute the .sql file to creating table (see Section 2), and voila. 
 
+## Optional: Manually check for data insertion in tables:
+### 1. Modify the `docker-compose.yaml` file
+Open the `docker-compose.yaml` file and add a ports mapping to the postgres service. This links a port on your local machine to the database port inside the container.
+```bash
+postgres:
+  image: postgres:13
+  container_name: postgres
+  ports:
+    - "5433:5432" # Maps local port 5433 to container port 5432
+  # ... rest of the service definition
+
+```
+
+### 2. Setup connection in Navicat:
+| Field | Value |
+| :--- | :--- |
+| **Host** | `localhost` |
+| **Port** | `5433` |
+| **Initial Database** | `airflow` |
+| **User Name** | `airflow` |
+| **Password** | `airflow` |
+
+After that, look for the `airflow` database, and the `public` schema. Inside, looks for the tables we created. The data should looks like this:
+<img width="1919" height="1079" alt="insert_data_success" src="https://github.com/user-attachments/assets/0dd194b0-11bc-4b16-be13-6af6ea59ea4e" />
+
