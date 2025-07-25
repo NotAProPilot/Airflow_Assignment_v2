@@ -201,3 +201,8 @@ To add a new connection, click on the + button, and fill information as follows:
 | **Login** | `airflow` | The default username. |
 | **Password** | `airflow` | The default password. |
 | **Port** | `5432` | The standard PostgreSQL port. |
+
+After that, click on the DAG to trigger it manually. If you see a screen like this:
+<img width="1895" height="943" alt="all_task_success_run" src="https://github.com/user-attachments/assets/bbcead30-9c20-4555-8b8f-7989872a4195" />
+
+Then 🎉 congratulations! Your DAG is up and running. Now go and write documentation 😁
