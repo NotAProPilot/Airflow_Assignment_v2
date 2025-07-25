@@ -65,6 +65,13 @@ At a high-level, the pseudocode for the entire DAG is like this:
 
 # The class SQLQuries provided:
 clas SQLQueries:
-  # Code for inserting
 
+  # Code for inserting into songplay table:
+  songplay_table_insert = (
+    """
+      INSERT INTO ....
+    """
+  )
+
+  # The same for other tables
 ```
