@@ -109,4 +109,43 @@ def load_songs_into_staging_table(**kwargs):
 # Simillarly for loading LOG into STAGING TABLE:
 def load_logs_into_staging_table():
   # Similar logics...
+
+# Function to check data:
+def data_quality_check(**kwargs):
+    """
+    Performs data quality checks on a list of tables to ensure they contain records.
+    """
+    # Step 1: Establish a connection to the database using the Airflow hook
+    # The connection ID is passed from the PythonOperator in the DAG
+    postgres_hook = PostgresHook(postgres_conn_id=kwargs['postgres_conn_id'])
+    
+    # Step 2: Define the list of tables that require a data quality check
+    tables_to_verify = ['songplays', 'users', 'artists', 'time', 'songs']
+    
+    # Step 3: Loop through each table to perform the check
+    for table in tables_to_verify:
+        
+        # Formulate and execute a query to count the rows in the current table
+        records = postgres_hook.get_records(f"SELECT COUNT(*) FROM {table}")
+        
+        # Step 4: Validate the query result
+        # Check if the result is empty or if the count is less than 1.
+        # This indicates a failure in the data loading process.
+        has_no_records = not records or not records[0] or records[0][0] < 1
+        
+        if has_no_records:
+            # If the check fails, raise an exception. This will cause the
+            # Airflow task to fail and stop the pipeline.
+            raise AirflowException(f"Data quality check failed for table '{table}'. No records found.")
+            
+    # Step 5: If the loop completes, all checks have passed
+    print("Data quality check complete. All tables contain data.")
+
+# DAG information setup:
+with DAG(
+  # Set interval, time, owner here....
+) as DAG
+
+#
+    
 ```
