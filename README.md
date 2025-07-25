@@ -194,7 +194,7 @@ Once you have done all of the above, head to `http://localhost:8080` to access A
 To add a new connection, click on the + button, and fill information as follows:
 | Field | Value | Notes |
 | :--- | :--- | :--- |
-| **Connection Id** | `postgres_default` | Must match the ID used in your DAG code. |
+| **Connection Id** | `postgres_default` | Must match the ID used in your DAG setup (the `postgress_conn_id` in `PostgresOperator` |
 | **Connection Type** | `Postgres` | Select from the dropdown menu. |
 | **Host** | `postgres` | **Crucial**: This is the Docker network alias for the database container. Do not use `localhost`. |
 | **Schema** | `airflow` | The default database name created by the Docker Compose setup. |
