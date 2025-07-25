@@ -226,4 +226,12 @@ Don't panic yet. There's a very helpful way to debug:
 | **`operator does not exist: integer \|\| timestamp`** | PostgreSQL does not have a built-in operator to concatenate (`\|\|`) an `INTEGER` (`sessionid`) and a `TIMESTAMP` (`start_time`) directly. | The SQL query for `songplay_table_insert` was modified to `CAST` both `sessionid` and `start_time` to `TEXT` before the concatenation, allowing them to be combined for the `md5` hash. |
 | **`duplicate key value violates unique constraint`** | The `INSERT` statements were not idempotent. Re-running the DAG caused duplicate data to be inserted into tables with primary key constraints. This happened in the `users` table (due to changing user levels) and the `time` table (due to multiple events at the same timestamp). | **1. Idempotency**: `TRUNCATE TABLE` commands were added to the beginning of every data loading task (both staging and final tables) to ensure each run starts fresh.<br>**2. Unique Users**: The `user_table_insert` query was rewritten using a `ROW_NUMBER()` window function to select only the most recent record for each user.<br>**3. Unique Timestamps**: The `time_table_insert` query was modified to select from a subquery of `DISTINCT start_time` values from the `songplays` table. |
 
+## 6. Cloning/Validate on other computers
+To clone this repo, make sure:
+1. Docker is installed on your computer, and;
+2. If using Windows, install WSL2 as well.
+
+After that, just clone this repo, `cd` into the folder, and `docker-compose up airflow-init`, follows by `docker-compose up -d` to get this running. 
+
+Finally, execute the .sql file to creating table (see Section 2), and voila. 
 
