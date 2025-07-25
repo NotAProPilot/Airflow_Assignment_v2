@@ -58,3 +58,13 @@ Type `docker ps`. It'll shows something like this:
 <img width="1811" height="179" alt="image" src="https://github.com/user-attachments/assets/f697176f-7303-435f-944a-adf5d9cd4140" />
 
 Find the ID for `postgres:13`. 
+
+## 3. Writing the DAG
+At a high-level, the pseudocode for the entire DAG is like this:
+```python
+
+# The class SQLQuries provided:
+clas SQLQueries:
+  # Code for inserting
+
+```
