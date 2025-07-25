@@ -3470,3 +3470,11 @@
 [2025-07-25T07:09:57.252+0000] {logging_mixin.py:188} INFO - [2025-07-25T07:09:57.251+0000] {dag.py:3954} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
 [2025-07-25T07:09:57.256+0000] {logging_mixin.py:188} INFO - [2025-07-25T07:09:57.256+0000] {dag.py:3954} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
 [2025-07-25T07:09:57.282+0000] {processor.py:183} INFO - Processing /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 0.098 seconds
+[2025-07-25T07:10:27.866+0000] {processor.py:161} INFO - Started process (PID=2806) to work on /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2025-07-25T07:10:27.873+0000] {processor.py:830} INFO - Processing file /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py for tasks to queue
+[2025-07-25T07:10:27.888+0000] {logging_mixin.py:188} INFO - [2025-07-25T07:10:27.886+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2025-07-25T07:10:27.937+0000] {processor.py:840} INFO - DAG(s) 'example_external_task_marker_child', 'example_external_task_marker_parent' retrieved from /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py
+[2025-07-25T07:10:28.081+0000] {logging_mixin.py:188} INFO - [2025-07-25T07:10:28.080+0000] {dag.py:3096} INFO - Sync 2 DAGs
+[2025-07-25T07:10:28.133+0000] {logging_mixin.py:188} INFO - [2025-07-25T07:10:28.132+0000] {dag.py:3954} INFO - Setting next_dagrun for example_external_task_marker_child to None, run_after=None
+[2025-07-25T07:10:28.149+0000] {logging_mixin.py:188} INFO - [2025-07-25T07:10:28.148+0000] {dag.py:3954} INFO - Setting next_dagrun for example_external_task_marker_parent to None, run_after=None
+[2025-07-25T07:10:28.196+0000] {processor.py:183} INFO - Processing /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_external_task_marker_dag.py took 0.376 seconds

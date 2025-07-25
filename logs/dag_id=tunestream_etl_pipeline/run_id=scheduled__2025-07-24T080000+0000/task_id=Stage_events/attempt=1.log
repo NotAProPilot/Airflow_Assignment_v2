@@ -88,3 +88,377 @@ airflow.exceptions.AirflowNotFoundException: The conn_id `postgres_default` isn'
 
 [2025-07-24T15:35:24.492+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
 [2025-07-24T15:35:24.514+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-25T07:10:28.535+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-25T07:10:28.631+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Stage_events scheduled__2025-07-24T08:00:00+00:00 [queued]>
+[2025-07-25T07:10:28.661+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Stage_events scheduled__2025-07-24T08:00:00+00:00 [queued]>
+[2025-07-25T07:10:28.663+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2025-07-25T07:10:28.713+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Stage_events> on 2025-07-24 08:00:00+00:00
+[2025-07-25T07:10:28.746+0000] {standard_task_runner.py:63} INFO - Started process 442 to run task
+[2025-07-25T07:10:28.753+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tunestream_etl_pipeline', 'Stage_events', 'scheduled__2025-07-24T08:00:00+00:00', '--job-id', '100', '--raw', '--subdir', 'DAGS_FOLDER/final_exam_src.py', '--cfg-path', '/tmp/tmp8fnwjtl4']
+[2025-07-25T07:10:28.760+0000] {standard_task_runner.py:91} INFO - Job 100: Subtask Stage_events
+[2025-07-25T07:10:28.997+0000] {task_command.py:426} INFO - Running <TaskInstance: tunestream_etl_pipeline.Stage_events scheduled__2025-07-24T08:00:00+00:00 [running]> on host f0ac0c7b7f5e
+[2025-07-25T07:10:29.318+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='QuangBLM1' AIRFLOW_CTX_DAG_ID='tunestream_etl_pipeline' AIRFLOW_CTX_TASK_ID='Stage_events' AIRFLOW_CTX_EXECUTION_DATE='2025-07-24T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-24T08:00:00+00:00'
+[2025-07-25T07:10:29.330+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-25T07:10:29.378+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:29.407+0000] {sql.py:487} INFO - Running statement: TRUNCATE TABLE public.staging_events;, parameters: None
+[2025-07-25T07:10:29.542+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:29.581+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Walter', 'M', 0, 'Frye', None, 'free', 'San Francisco-Oakland-Hayward, CA', 'GET', 'Home', 1540919166796.0, 38, None, 200, 1541105830796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '39')
+[2025-07-25T07:10:29.594+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:29.728+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:29.806+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Kaylee', 'F', 0, 'Summers', None, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'GET', 'Home', 1540344794796.0, 139, None, 200, 1541106106796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:29.828+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:29.886+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:29.921+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ("Des'ree", 'Logged In', 'Kaylee', 'F', 1, 'Summers', 246.30812, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'You Gotta Be', 200, 1541106106796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:29.928+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:29.986+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.056+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Kaylee', 'F', 2, 'Summers', None, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'GET', 'Upgrade', 1540344794796.0, 139, None, 200, 1541106132796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.102+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.218+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.254+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Mr Oizo', 'Logged In', 'Kaylee', 'F', 3, 'Summers', 144.03873, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'Flat 55', 200, 1541106352796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.264+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.360+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.420+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Tamba Trio', 'Logged In', 'Kaylee', 'F', 4, 'Summers', 177.18812, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'Quem Quiser Encontrar O Amor', 200, 1541106496796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.429+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.515+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.534+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('The Mars Volta', 'Logged In', 'Kaylee', 'F', 5, 'Summers', 380.42077, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'Eriatarka', 200, 1541106673796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.549+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.597+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.617+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Infected Mushroom', 'Logged In', 'Kaylee', 'F', 6, 'Summers', 440.2673, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'Becoming Insane', 200, 1541107053796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.630+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.664+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.695+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Blue October / Imogen Heap', 'Logged In', 'Kaylee', 'F', 7, 'Summers', 241.3971, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'Congratulations', 200, 1541107493796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.698+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.739+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.779+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Girl Talk', 'Logged In', 'Kaylee', 'F', 8, 'Summers', 160.15628, 'free', 'Phoenix-Mesa-Scottsdale, AZ', 'PUT', 'NextSong', 1540344794796.0, 139, 'Once again', 200, 1541107734796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"', '8')
+[2025-07-25T07:10:30.782+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.841+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.864+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Black Eyed Peas', 'Logged In', 'Sylvie', 'F', 0, 'Cruz', 214.93506, 'free', 'Washington-Arlington-Alexandria, DC-VA-MD-WV', 'PUT', 'NextSong', 1540266185796.0, 9, 'Pump It', 200, 1541108520796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.77.4 (KHTML, like Gecko) Version/7.0.5 Safari/537.77.4"', '10')
+[2025-07-25T07:10:30.870+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.917+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:30.934+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Ryan', 'M', 0, 'Smith', None, 'free', 'San Jose-Sunnyvale-Santa Clara, CA', 'GET', 'Home', 1541016707796.0, 169, None, 200, 1541109015796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '26')
+[2025-07-25T07:10:30.940+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:30.983+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.019+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Fall Out Boy', 'Logged In', 'Ryan', 'M', 1, 'Smith', 200.72444, 'free', 'San Jose-Sunnyvale-Santa Clara, CA', 'PUT', 'NextSong', 1541016707796.0, 169, 'Nobody Puts Baby In The Corner', 200, 1541109125796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '26')
+[2025-07-25T07:10:31.023+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.059+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.095+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('M.I.A.', 'Logged In', 'Ryan', 'M', 2, 'Smith', 233.7171, 'free', 'San Jose-Sunnyvale-Santa Clara, CA', 'PUT', 'NextSong', 1541016707796.0, 169, 'Mango Pickle Down River (With The Wilcannia Mob)', 200, 1541109325796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '26')
+[2025-07-25T07:10:31.098+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.144+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.172+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Survivor', 'Logged In', 'Jayden', 'M', 0, 'Fox', 245.36771, 'free', 'New Orleans-Metairie, LA', 'PUT', 'NextSong', 1541033612796.0, 100, 'Eye Of The Tiger', 200, 1541110994796, '"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '101')
+[2025-07-25T07:10:31.175+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.237+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.270+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('N.E.R.D. FEATURING MALICE', 'Logged In', 'Jayden', 'M', 0, 'Fox', 288.9922, 'free', 'New Orleans-Metairie, LA', 'PUT', 'NextSong', 1541033612796.0, 184, 'Am I High (Feat. Malice)', 200, 1541121934796, '"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '101')
+[2025-07-25T07:10:31.273+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.324+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.348+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Stefany', 'F', 0, 'White', None, 'free', 'Lubbock, TX', 'GET', 'Home', 1540708070796.0, 82, None, 200, 1541122176796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '83')
+[2025-07-25T07:10:31.351+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.398+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.425+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Death Cab for Cutie', 'Logged In', 'Stefany', 'F', 1, 'White', 216.42404, 'free', 'Lubbock, TX', 'PUT', 'NextSong', 1540708070796.0, 82, 'A Lack Of Color (Album Version)', 200, 1541122241796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '83')
+[2025-07-25T07:10:31.429+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.472+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.510+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Tracy Gang Pussy', 'Logged In', 'Stefany', 'F', 2, 'White', 221.33506, 'free', 'Lubbock, TX', 'PUT', 'NextSong', 1540708070796.0, 82, 'I Have A Wish', 200, 1541122457796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '83')
+[2025-07-25T07:10:31.514+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.558+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.576+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Skillet', 'Logged In', 'Kevin', 'M', 0, 'Arellano', 178.02404, 'free', 'Harrisburg-Carlisle, PA', 'PUT', 'NextSong', 1540006905796.0, 153, 'Monster (Album Version)', 200, 1541126568796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"', '66')
+[2025-07-25T07:10:31.593+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.640+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.669+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Dance Gavin Dance', 'Logged In', 'Marina', 'F', 0, 'Sutton', 218.46159, 'free', 'Salinas, CA', 'PUT', 'NextSong', 1541064343796.0, 47, 'Uneasy Hearts Weigh The Most', 200, 1541127957796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36"', '48')
+[2025-07-25T07:10:31.676+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.766+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.794+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Aiden', 'M', 0, 'Hess', None, 'free', 'La Crosse-Onalaska, WI-MN', 'GET', 'Home', 1540829025796.0, 170, None, 200, 1541129561796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36"', '86')
+[2025-07-25T07:10:31.803+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.840+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.862+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Dalto', 'Logged In', 'Aiden', 'M', 1, 'Hess', 190.40608, 'free', 'La Crosse-Onalaska, WI-MN', 'PUT', 'NextSong', 1540829025796.0, 170, 'Falta Te Dizer', 200, 1541129674796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36"', '86')
+[2025-07-25T07:10:31.864+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:31.904+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:31.930+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Kanye West', 'Logged In', 'Makinley', 'F', 0, 'Jones', 278.88281, 'free', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541091973796.0, 118, 'Family Business', 200, 1541135741796, '"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"', '17')
+[2025-07-25T07:10:31.951+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.013+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.031+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Jason Mraz & Colbie Caillat', 'Logged In', 'Kevin', 'M', 0, 'Arellano', 189.6224, 'free', 'Harrisburg-Carlisle, PA', 'PUT', 'NextSong', 1540006905796.0, 187, 'Lucky (Album Version)', 200, 1541137949796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"', '66')
+[2025-07-25T07:10:32.035+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.092+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.135+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Liz Callaway', 'Logged In', 'Lily', 'F', 0, 'Koch', 175.43791, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Journey To The Past  (LP Version)', 200, 1541149281796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.139+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.178+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.211+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('The Decemberists', 'Logged In', 'Lily', 'F', 1, 'Koch', 242.59873, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Everything I Try to Do_ Nothing Seems to Turn Out Right', 200, 1541149456796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.233+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.273+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.293+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (None, 'Logged In', 'Kynnedi', 'F', 0, 'Sanchez', None, 'free', 'Cedar Rapids, IA', 'GET', 'Home', 1541079034796.0, 88, None, 200, 1541149530796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"', '89')
+[2025-07-25T07:10:32.296+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.336+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.373+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Christina Aguilera', 'Logged In', 'Lily', 'F', 2, 'Koch', 254.48444, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Impossible', 200, 1541149698796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.389+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.421+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.446+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('OneRepublic', 'Logged In', 'Lily', 'F', 3, 'Koch', 224.67873, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Secrets', 200, 1541149952796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.449+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.492+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.515+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Cat Stevens', 'Logged In', 'Kynnedi', 'F', 1, 'Sanchez', 200.202, 'free', 'Cedar Rapids, IA', 'PUT', 'NextSong', 1541079034796.0, 88, 'Wild World', 200, 1541150017796, '"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"', '89')
+[2025-07-25T07:10:32.519+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.561+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.591+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Brett Dennen', 'Logged In', 'Lily', 'F', 4, 'Koch', 179.66975, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'World Keeps Turning', 200, 1541150176796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.596+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.631+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.644+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Godsmack', 'Logged In', 'Lily', 'F', 5, 'Koch', 208.24771, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Greed', 200, 1541150355796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.647+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.677+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.705+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Anis', 'Logged In', 'Lily', 'F', 6, 'Koch', 246.59546, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Swing Javanaise', 200, 1541150563796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.708+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.756+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.783+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Tiziano Ferro', 'Logged In', 'Lily', 'F', 7, 'Koch', 251.42812, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Ed Ero Contentissimo', 200, 1541150809796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.786+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.826+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.851+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Kylie Auldist', 'Logged In', 'Lily', 'F', 8, 'Koch', 265.92608, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Ship Inside A Bottle', 200, 1541151060796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.865+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.910+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.925+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Benga', 'Logged In', 'Lily', 'F', 9, 'Koch', 286.17098, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'The Cut', 200, 1541151325796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:32.934+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:32.977+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:32.989+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('T. Rex', 'Logged In', 'Lily', 'F', 10, 'Koch', 132.85832, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Ride A White Swan', 200, 1541151611796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.004+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.054+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.070+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Mexican Institute of Sound', 'Logged In', 'Lily', 'F', 11, 'Koch', 278.04689, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Mirando a Las Muchachas', 200, 1541151743796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.072+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.131+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.155+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Velour 100', 'Logged In', 'Lily', 'F', 12, 'Koch', 202.29179, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Clouds (Of Color Bright Album Version)', 200, 1541152021796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.171+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.209+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.227+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Maria de Barros', 'Logged In', 'Lily', 'F', 13, 'Koch', 276.29669, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Riberonzinha', 200, 1541152223796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.232+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.277+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.292+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Toby Keith', 'Logged In', 'Lily', 'F', 14, 'Koch', 177.162, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Big Blue Note', 200, 1541152499796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.295+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.327+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.350+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Marques Houston', 'Logged In', 'Lily', 'F', 15, 'Koch', 264.98567, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Naked', 200, 1541152676796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.352+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.399+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.414+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Commit Suicide', 'Logged In', 'Lily', 'F', 16, 'Koch', 105.482, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'In All This Revelation', 200, 1541152940796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.416+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.456+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.468+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_events (
+        artist, auth, firstname, gender, iteminsession, lastname, length, "level", location, method, page, 
+        registration, sessionid, song, status, ts, useragent, userid
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: ('Smile Empty Soul', 'Logged In', 'Lily', 'F', 17, 'Koch', 218.61832, 'paid', 'Chicago-Naperville-Elgin, IL-IN-WI', 'PUT', 'NextSong', 1541048010796.0, 172, 'Bottom of a Bottle (Explicit Album Version)', 200, 1541153045796, '"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/36.0.1985.125 Chrome/36.0.1985.125 Safari/537.36"', '15')
+[2025-07-25T07:10:33.471+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.499+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
