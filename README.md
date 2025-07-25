@@ -7,7 +7,7 @@ At a high-level, this project can be visualized throught the following diagram:
 
 ## Folder structure
 ```md
-tunestream_etl_pipeline/
+root_folder(airflow_assignment_v2)/
 │
 ├── dags/
 │   └── tunestream_etl_pipeline.py  # The main Airflow DAG file.
