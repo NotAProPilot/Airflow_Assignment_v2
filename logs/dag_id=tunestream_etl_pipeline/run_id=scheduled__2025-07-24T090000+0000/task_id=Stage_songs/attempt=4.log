@@ -1,0 +1,43 @@
+[2025-07-24T15:50:37.641+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-24T15:50:37.676+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Stage_songs scheduled__2025-07-24T09:00:00+00:00 [queued]>
+[2025-07-24T15:50:37.691+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Stage_songs scheduled__2025-07-24T09:00:00+00:00 [queued]>
+[2025-07-24T15:50:37.692+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2025-07-24T15:50:37.715+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Stage_songs> on 2025-07-24 09:00:00+00:00
+[2025-07-24T15:50:37.729+0000] {standard_task_runner.py:63} INFO - Started process 613 to run task
+[2025-07-24T15:50:37.736+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tunestream_etl_pipeline', 'Stage_songs', 'scheduled__2025-07-24T09:00:00+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/final_exam_src.py', '--cfg-path', '/tmp/tmpk67b688l']
+[2025-07-24T15:50:37.741+0000] {standard_task_runner.py:91} INFO - Job 112: Subtask Stage_songs
+[2025-07-24T15:50:37.859+0000] {task_command.py:426} INFO - Running <TaskInstance: tunestream_etl_pipeline.Stage_songs scheduled__2025-07-24T09:00:00+00:00 [running]> on host 562a5fa0e436
+[2025-07-24T15:50:38.024+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='QuangBLM1' AIRFLOW_CTX_DAG_ID='tunestream_etl_pipeline' AIRFLOW_CTX_TASK_ID='Stage_songs' AIRFLOW_CTX_EXECUTION_DATE='2025-07-24T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-24T09:00:00+00:00'
+[2025-07-24T15:50:38.029+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-24T15:50:38.111+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-24T15:50:38.130+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/final_exam_src.py", line 79, in load_songs_into_table
+    postgres_hook.run(insert_sql, parameters=(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 431, in run
+    with self._create_autocommit_connection(autocommit) as conn:
+  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 551, in _create_autocommit_connection
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/postgres/hooks/postgres.py", line 145, in get_conn
+    conn = deepcopy(self.connection or self.get_connection(conn_id))
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/hooks/base.py", line 83, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/connection.py", line 519, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `postgres_default` isn't defined
+[2025-07-24T15:50:38.153+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=tunestream_etl_pipeline, task_id=Stage_songs, run_id=scheduled__2025-07-24T09:00:00+00:00, execution_date=20250724T090000, start_date=20250724T155037, end_date=20250724T155038
+[2025-07-24T15:50:38.184+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 112 for task Stage_songs (The conn_id `postgres_default` isn't defined; 613)
+[2025-07-24T15:50:38.231+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-24T15:50:38.251+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
