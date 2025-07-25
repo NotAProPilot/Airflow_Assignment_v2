@@ -91,6 +91,8 @@ x-airflow-common:
 services:
   postgres:
     image: postgres:13
+    ports: # <-- ADD THIS SECTION
+    - "5433:5432" # <-- This maps container port 5432 to your local port 5433
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
