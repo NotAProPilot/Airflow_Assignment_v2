@@ -174,3 +174,16 @@ task1 >> task2
 task2 >> [task3, task4]
     
 ```
+Make sure ALL of this must be imported:
+
+```python
+from datetime import datetime, timedelta
+from airflow.models.dag import DAG
+from airflow.operators.python import PythonOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+from airflow.operators.dummy_operator import EmptyOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.exceptions import AirflowException
+import json
+import os
+```
