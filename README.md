@@ -187,3 +187,9 @@ from airflow.exceptions import AirflowException
 import json
 import os
 ```
+# 4. Add connection on Airflow UI
+Once you have done all of the above, head to `http://localhost:8080` to access Airflow. From the home screen, visit the Admin > Connection tab (like this):
+<img width="1692" height="391" alt="image" src="https://github.com/user-attachments/assets/2fc9c514-c35f-406e-a370-dc8ef330bc8d" />
+
+To add a new connection, do as follows:
+1. 
