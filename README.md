@@ -77,25 +77,25 @@ clas SQLQueries:
 
 # Function to load data into STAGING song table:
 def load_songs_into_staging_table(**kwargs):
-    // Establish a connection to the database using the provided connection ID
+    # Establish a connection to the database using the provided connection ID
     db_hook = Connect_to_Postgres(connection_id = kwargs['postgres_conn_id'])
     
-    // Define the source directory for the song data files
+    # Define the source directory for the song data files
     song_data_directory = "/opt/airflow/data/song_data/"
     
-    // Ensure idempotency by clearing the staging table before loading
+    # Ensure idempotency by clearing the staging table before loading
     db_hook.execute("TRUNCATE TABLE public.staging_songs")
     
-    // Prepare the parameterized SQL INSERT statement
+    # Prepare the parameterized SQL INSERT statement
     insert_statement = "INSERT INTO public.staging_songs VALUES (%s, %s, ...)"
     
-    // Recursively find and process every JSON file in the source directory
+    # Recursively find and process every JSON file in the source directory
     For each file in find_all_files(song_data_directory, ending_in=".json"):
         
-        // Read the file and parse its contents as a JSON object
+        # Read the file and parse its contents as a JSON object
         song_data = parse_json(file)
         
-        // Extract values from the JSON object in the correct order for insertion
+        # Extract values from the JSON object in the correct order for insertion
         record_parameters = (
             song_data['num_songs'],
             song_data['artist_id'],
@@ -103,7 +103,7 @@ def load_songs_into_staging_table(**kwargs):
             song_data['year']
         )
         
-        // Execute the INSERT statement, passing the extracted parameters
+        # Execute the INSERT statement, passing the extracted parameters
         db_hook.execute(insert_statement, parameters=record_parameters)
 
 # Simillarly for loading LOG into STAGING TABLE:
