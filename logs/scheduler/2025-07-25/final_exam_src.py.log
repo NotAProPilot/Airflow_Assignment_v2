@@ -4938,3 +4938,66 @@
 [2025-07-25T09:34:06.563+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:34:06.563+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-07-25T09:34:06.594+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:34:06.593+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
 [2025-07-25T09:34:06.626+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.139 seconds
+[2025-07-25T09:35:54.928+0000] {processor.py:161} INFO - Started process (PID=57) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:35:54.930+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:35:54.934+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:35:54.934+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:35:54.997+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:35:55.415+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:35:55.414+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:35:55.448+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:35:55.448+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:35:55.499+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.589 seconds
+[2025-07-25T09:36:25.675+0000] {processor.py:161} INFO - Started process (PID=116) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:36:25.676+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:36:25.679+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:36:25.679+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:36:25.703+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:36:25.733+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:36:25.732+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:36:25.756+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:36:25.756+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:36:25.789+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.122 seconds
+[2025-07-25T09:36:56.169+0000] {processor.py:161} INFO - Started process (PID=175) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:36:56.170+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:36:56.174+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:36:56.173+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:36:56.207+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:36:56.244+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:36:56.243+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:36:56.272+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:36:56.272+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:36:56.307+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.149 seconds
+[2025-07-25T09:37:26.660+0000] {processor.py:161} INFO - Started process (PID=235) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:37:26.662+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:37:26.666+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:37:26.665+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:37:26.706+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:37:26.744+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:37:26.743+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:37:26.804+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:37:26.804+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:37:26.869+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.221 seconds
+[2025-07-25T09:37:57.697+0000] {processor.py:161} INFO - Started process (PID=294) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:37:57.699+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:37:57.701+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:37:57.701+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:37:57.734+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:37:57.770+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:37:57.770+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:37:57.801+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:37:57.800+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:37:57.834+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.147 seconds
+[2025-07-25T09:38:27.929+0000] {processor.py:161} INFO - Started process (PID=353) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:38:27.931+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:38:27.934+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:38:27.934+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:38:27.966+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:38:28.000+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:38:28.000+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:38:28.034+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:38:28.033+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:38:28.063+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.143 seconds
+[2025-07-25T09:38:58.161+0000] {processor.py:161} INFO - Started process (PID=412) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:38:58.163+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:38:58.165+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:38:58.165+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:38:58.190+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:38:58.220+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:38:58.220+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:38:58.248+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:38:58.248+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:38:58.274+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.120 seconds
+[2025-07-25T09:39:28.377+0000] {processor.py:161} INFO - Started process (PID=471) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:39:28.379+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:39:28.382+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:39:28.381+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:39:28.408+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:39:28.438+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:39:28.438+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:39:28.463+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:39:28.463+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:39:28.490+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.120 seconds
+[2025-07-25T09:39:58.866+0000] {processor.py:161} INFO - Started process (PID=530) to work on /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:39:58.869+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/final_exam_src.py for tasks to queue
+[2025-07-25T09:39:58.872+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:39:58.872+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:39:58.916+0000] {processor.py:840} INFO - DAG(s) 'tunestream_etl_pipeline' retrieved from /opt/airflow/dags/final_exam_src.py
+[2025-07-25T09:39:58.957+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:39:58.957+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-25T09:39:58.998+0000] {logging_mixin.py:188} INFO - [2025-07-25T09:39:58.997+0000] {dag.py:3954} INFO - Setting next_dagrun for tunestream_etl_pipeline to 2025-07-25 09:00:00+00:00, run_after=2025-07-25 10:00:00+00:00
+[2025-07-25T09:39:59.039+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/final_exam_src.py took 0.183 seconds
