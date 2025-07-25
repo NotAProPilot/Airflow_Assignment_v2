@@ -1,0 +1,34 @@
+[2025-07-25T07:25:31.798+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-25T07:25:32.081+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Load_artist_dim_table scheduled__2025-07-24T14:00:00+00:00 [queued]>
+[2025-07-25T07:25:32.236+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Load_artist_dim_table scheduled__2025-07-24T14:00:00+00:00 [queued]>
+[2025-07-25T07:25:32.239+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2025-07-25T07:25:32.668+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): Load_artist_dim_table> on 2025-07-24 14:00:00+00:00
+[2025-07-25T07:25:32.709+0000] {standard_task_runner.py:63} INFO - Started process 862 to run task
+[2025-07-25T07:25:32.727+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tunestream_etl_pipeline', 'Load_artist_dim_table', 'scheduled__2025-07-24T14:00:00+00:00', '--job-id', '183', '--raw', '--subdir', 'DAGS_FOLDER/final_exam_src.py', '--cfg-path', '/tmp/tmp8n7wjkcq']
+[2025-07-25T07:25:32.741+0000] {standard_task_runner.py:91} INFO - Job 183: Subtask Load_artist_dim_table
+[2025-07-25T07:25:33.177+0000] {task_command.py:426} INFO - Running <TaskInstance: tunestream_etl_pipeline.Load_artist_dim_table scheduled__2025-07-24T14:00:00+00:00 [running]> on host f0ac0c7b7f5e
+[2025-07-25T07:25:33.801+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='QuangBLM1' AIRFLOW_CTX_DAG_ID='tunestream_etl_pipeline' AIRFLOW_CTX_TASK_ID='Load_artist_dim_table' AIRFLOW_CTX_EXECUTION_DATE='2025-07-24T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-24T14:00:00+00:00'
+[2025-07-25T07:25:33.808+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-25T07:25:33.810+0000] {sql.py:276} INFO - Executing: 
+        TRUNCATE TABLE artists;
+        INSERT INTO artists (artistid, name, location, lattitude, longitude)
+        SELECT distinct artist_id, artist_name, artist_location, artist_latitude, artist_longitude
+        FROM staging_songs;
+    
+[2025-07-25T07:25:33.856+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:25:33.898+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:25:33.982+0000] {sql.py:487} INFO - Running statement: 
+        TRUNCATE TABLE artists;
+        INSERT INTO artists (artistid, name, location, lattitude, longitude)
+        SELECT distinct artist_id, artist_name, artist_location, artist_latitude, artist_longitude
+        FROM staging_songs;
+    , parameters: None
+[2025-07-25T07:25:34.037+0000] {sql.py:496} INFO - Rows affected: 53
+[2025-07-25T07:25:34.053+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-25T07:25:34.101+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=tunestream_etl_pipeline, task_id=Load_artist_dim_table, run_id=scheduled__2025-07-24T14:00:00+00:00, execution_date=20250724T140000, start_date=20250725T072532, end_date=20250725T072534
+[2025-07-25T07:25:34.282+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-25T07:25:34.383+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/models/baseoperator.py:1297: AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+  result = cls.__new__(cls)
+
+[2025-07-25T07:25:34.529+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-25T07:25:34.560+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

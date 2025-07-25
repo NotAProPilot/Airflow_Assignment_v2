@@ -1,0 +1,37 @@
+[2025-07-25T08:03:55.711+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-25T08:03:55.751+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Run_data_quality_checks scheduled__2025-07-25T07:00:00+00:00 [queued]>
+[2025-07-25T08:03:55.764+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tunestream_etl_pipeline.Run_data_quality_checks scheduled__2025-07-25T07:00:00+00:00 [queued]>
+[2025-07-25T08:03:55.765+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2025-07-25T08:03:55.783+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Run_data_quality_checks> on 2025-07-25 07:00:00+00:00
+[2025-07-25T08:03:55.797+0000] {standard_task_runner.py:63} INFO - Started process 1558 to run task
+[2025-07-25T08:03:55.802+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tunestream_etl_pipeline', 'Run_data_quality_checks', 'scheduled__2025-07-25T07:00:00+00:00', '--job-id', '284', '--raw', '--subdir', 'DAGS_FOLDER/final_exam_src.py', '--cfg-path', '/tmp/tmp4u1vlp5s']
+[2025-07-25T08:03:55.806+0000] {standard_task_runner.py:91} INFO - Job 284: Subtask Run_data_quality_checks
+[2025-07-25T08:03:55.900+0000] {task_command.py:426} INFO - Running <TaskInstance: tunestream_etl_pipeline.Run_data_quality_checks scheduled__2025-07-25T07:00:00+00:00 [running]> on host f0ac0c7b7f5e
+[2025-07-25T08:03:56.050+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='QuangBLM1' AIRFLOW_CTX_DAG_ID='tunestream_etl_pipeline' AIRFLOW_CTX_TASK_ID='Run_data_quality_checks' AIRFLOW_CTX_EXECUTION_DATE='2025-07-25T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-25T07:00:00+00:00'
+[2025-07-25T08:03:56.054+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-25T08:03:56.070+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T08:03:56.077+0000] {sql.py:487} INFO - Running statement: SELECT COUNT(*) FROM songplays, parameters: None
+[2025-07-25T08:03:56.080+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T08:03:56.081+0000] {logging_mixin.py:188} INFO - Data quality check passed for songplays with 6820 records.
+[2025-07-25T08:03:56.093+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T08:03:56.099+0000] {sql.py:487} INFO - Running statement: SELECT COUNT(*) FROM users, parameters: None
+[2025-07-25T08:03:56.102+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T08:03:56.104+0000] {logging_mixin.py:188} INFO - Data quality check passed for users with 96 records.
+[2025-07-25T08:03:56.119+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T08:03:56.134+0000] {sql.py:487} INFO - Running statement: SELECT COUNT(*) FROM artists, parameters: None
+[2025-07-25T08:03:56.138+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T08:03:56.141+0000] {logging_mixin.py:188} INFO - Data quality check passed for artists with 69 records.
+[2025-07-25T08:03:56.158+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T08:03:56.166+0000] {sql.py:487} INFO - Running statement: SELECT COUNT(*) FROM time, parameters: None
+[2025-07-25T08:03:56.170+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T08:03:56.172+0000] {logging_mixin.py:188} INFO - Data quality check passed for time with 6813 records.
+[2025-07-25T08:03:56.187+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T08:03:56.197+0000] {sql.py:487} INFO - Running statement: SELECT COUNT(*) FROM songs, parameters: None
+[2025-07-25T08:03:56.200+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T08:03:56.202+0000] {logging_mixin.py:188} INFO - Data quality check passed for songs with 71 records.
+[2025-07-25T08:03:56.203+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-25T08:03:56.205+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-25T08:03:56.221+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=tunestream_etl_pipeline, task_id=Run_data_quality_checks, run_id=scheduled__2025-07-25T07:00:00+00:00, execution_date=20250725T070000, start_date=20250725T080355, end_date=20250725T080356
+[2025-07-25T08:03:56.297+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-25T08:03:56.328+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-25T08:03:56.334+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -14,7 +14,9 @@ import os
 Please note that I have made the following changes to the insert statements:
 
 1. Add `TRUNCATE TABLE` before adding any data. I found out the hard way that this table has a lot of 'unique' constraint,
-so just to be safe, I have add a lot of truncate statement to de-d
+so just to be safe, I have add a lot of truncate statement to delete all data before re-run after each error.
+
+2. Add in ROW_NUMBER() when insert into user_table_insert, to comply with unique constraint as well.
 """
 class SqlQueries:
     songplay_table_insert = ("""
@@ -85,9 +87,9 @@ class SqlQueries:
         FROM (SELECT DISTINCT start_time FROM songplays) AS unique_songplays;
     """)
 
+# Load songs data to table
 def load_songs_into_table(**kwargs):
-    """Loads song data from JSON files into the staging_songs table."""
-    
+
     # Connection:
     postgres_hook = PostgresHook(postgres_conn_id=kwargs['postgres_conn_id'])
     data_path = "/opt/airflow/data/song_data/"
@@ -114,9 +116,9 @@ def load_songs_into_table(**kwargs):
                         song_data.get('artist_latitude'), song_data.get('artist_longitude'), song_data.get('artist_location'),
                         song_data.get('song_id'), song_data.get('title'), song_data.get('duration'), song_data.get('year')
                     ))
-
+                    
+# Load logs data to table
 def load_logs_into_table(**kwargs):
-    """Loads log data from JSON files into the staging_events table."""
     postgres_hook = PostgresHook(postgres_conn_id=kwargs['postgres_conn_id'])
     data_path = "/opt/airflow/data/log_data/"
     
@@ -153,8 +155,8 @@ def load_logs_into_table(**kwargs):
                             user_id # Use the cleaned user_id variable here
                         ))
 
+# Check if any data is actually loaded into the table:
 def data_quality_check(**kwargs):
-    """Performs data quality checks on the final tables."""
     postgres_hook = PostgresHook(postgres_conn_id=kwargs['postgres_conn_id'])
     tables = ['songplays', 'users', 'artists', 'time', 'songs']
     
@@ -164,10 +166,9 @@ def data_quality_check(**kwargs):
         if not records or not records[0] or records[0][0] < 1:
             raise AirflowException(f"Data quality check failed for table {table}. No records found.")
         
-        print(f"Data quality check passed for {table} with {records[0][0]} records.")
+        print("Data quality check complete.")
 
-# --- DAG Definition ---
-## TODO: MODIFY THIS TO TEST DAG
+# DAG setup: 
 default_args = {
     'owner': 'QuangBLM1',
     'depends_on_past': False,
@@ -185,42 +186,82 @@ with DAG(
     schedule_interval='@hourly'
 ) as dag:
 
-    begin_execution = EmptyOperator(task_id='Begin_execution')
+    # Task 1: Dummy operator to begin execution
+    begin_execution = EmptyOperator(
+        task_id='Begin_execution'
+    )
     
+    # Task 2: Load songs into stage table
     stage_songs = PythonOperator(
         task_id='Stage_songs',
         python_callable=load_songs_into_table,
         op_kwargs={'postgres_conn_id': 'postgres_default'}
     )
 
+    # Task 3: Load logs into stage table
     stage_events = PythonOperator(
         task_id='Stage_events',
         python_callable=load_logs_into_table,
         op_kwargs={'postgres_conn_id': 'postgres_default'}
     )
 
+    # Task 4: Load data into fact table:
     load_songplay_fact_table = PostgresOperator(
         task_id = 'Load_songplays_fact_table',
         postgres_conn_id = 'postgres_default',
         sql=SqlQueries.songplay_table_insert,
     )
 
-    load_song_dim_table = PostgresOperator(task_id = 'Load_song_dim_table', postgres_conn_id = 'postgres_default', sql=SqlQueries.song_table_insert)
-    load_user_dim_table = PostgresOperator(task_id = 'Load_user_dim_table', postgres_conn_id = 'postgres_default', sql=SqlQueries.user_table_insert)
-    load_artist_dim_table = PostgresOperator(task_id = 'Load_artist_dim_table', postgres_conn_id = 'postgres_default', sql=SqlQueries.artist_table_insert)
-    load_time_dim_table = PostgresOperator(task_id = 'Load_time_dim_table', postgres_conn_id = 'postgres_default', sql=SqlQueries.time_table_insert)
+    # Task 5: Load data into song dim table
+    load_song_dim_table = PostgresOperator(
+        task_id = 'Load_song_dim_table', 
+        postgres_conn_id = 'postgres_default', 
+        sql=SqlQueries.song_table_insert
+    )
     
+    # Task 6: Load data into user dim table
+    load_user_dim_table = PostgresOperator(
+        task_id = 'Load_user_dim_table', 
+        postgres_conn_id = 'postgres_default', 
+        sql=SqlQueries.user_table_insert
+    )
+    
+    # Task 7: Load data into artist dim table
+    load_artist_dim_table = PostgresOperator(
+        task_id = 'Load_artist_dim_table', 
+        postgres_conn_id = 'postgres_default', 
+        sql=SqlQueries.artist_table_insert
+    )
+    
+    # Task 8: Load data into time dim table
+    load_time_dim_table = PostgresOperator(
+        task_id = 'Load_time_dim_table',
+        postgres_conn_id = 'postgres_default', 
+        sql=SqlQueries.time_table_insert
+        )
+    
+    # Task 9: Check data quality (check if table has any data)
     check_data_quality = PythonOperator(
         task_id='Run_data_quality_checks',
         python_callable=data_quality_check,
         op_kwargs={'postgres_conn_id': 'postgres_default'}
     )
     
+    # Task 10: Check data quality (check if table has any data)
     end_execution = EmptyOperator(task_id='End_execution')
     
-    # --- Task Dependencies ---
+    # Setup task order
+    # From task 1 to task 2 and 3
     begin_execution >> [stage_songs, stage_events]
+    
+    # From task 2 and 3 -> 4
     [stage_songs, stage_events] >> load_songplay_fact_table
+    
+    # Task 4 -> Task 5 to 8
     load_songplay_fact_table >> [load_artist_dim_table, load_song_dim_table, load_time_dim_table, load_user_dim_table]
+    
+    # Task 5 to 8 -> Task 9
     [load_artist_dim_table, load_song_dim_table, load_time_dim_table, load_user_dim_table] >> check_data_quality
+    
+    # Task 9 -> Task 10
     check_data_quality >> end_execution

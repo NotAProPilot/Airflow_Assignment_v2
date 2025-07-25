@@ -204,3 +204,410 @@ airflow.exceptions.AirflowNotFoundException: The conn_id `postgres_default` isn'
     , parameters: (1, 'ARHHO3O1187B989413', 'Bob Azzam', None, None, '', 'SORAMLE12AB017C8B0', 'Auguri Cha Cha', 191.84281, 0)
 [2025-07-25T07:10:33.455+0000] {sql.py:496} INFO - Rows affected: 1
 [2025-07-25T07:10:33.505+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.522+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARIK43K1187B9AE54C', 'Lionel Richie', None, None, 'Beverly Hills, CA', 'SOBONFF12A6D4F84D8', 'Tonight Will Be Alright', 307.3824, 1986)
+[2025-07-25T07:10:33.525+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.596+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.635+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARD842G1187B997376', 'Blue Rodeo', 43.64856, -79.38533, 'Toronto, Ontario, Canada', 'SOHUOAP12A8AE488E9', 'Floating', 491.12771, 1987)
+[2025-07-25T07:10:33.639+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.700+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.740+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARIG6O41187B988BDD', 'Richard Souther', 37.16793, -95.84502, 'United States', 'SOUQQEA12A8C134B1B', 'High Tide', 228.5971, 0)
+[2025-07-25T07:10:33.754+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.835+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.869+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR1ZHYZ1187FB3C717', 'Faiz Ali Faiz', None, None, '', 'SOILPQQ12AB017E82A', 'Sohna Nee Sohna Data', 599.24853, 0)
+[2025-07-25T07:10:33.873+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:33.948+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:33.979+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARYKCQI1187FB3B18F', 'Tesla', None, None, '', 'SOXLBJT12A8C140925', 'Caught In A Dream', 290.29832, 2004)
+[2025-07-25T07:10:33.987+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.071+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.103+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARNPAGP1241B9C7FD4', 'lextrical', None, None, '', 'SOZVMJI12AB01808AF', 'Synthetic Dream', 165.69424, 0)
+[2025-07-25T07:10:34.108+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.171+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.197+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARQGYP71187FB44566', 'Jimmy Wakely', 34.31109, -94.02978, 'Mineola, AR', 'SOWTBJW12AC468AC6E', 'Broken-Down Merry-Go-Round', 151.84934, 0)
+[2025-07-25T07:10:34.200+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.268+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.303+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARI3BMM1187FB4255E', 'Alice Stuart', 38.8991, -77.029, 'Washington', 'SOBEBDG12A58A76D60', 'Kassie Jones', 220.78649, 0)
+[2025-07-25T07:10:34.319+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.408+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.437+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR5KOSW1187FB35FF4', 'Elena', 49.80388, 15.47491, 'Dubai UAE', 'SOZCTXZ12AB0182364', 'Setanta matins', 269.58322, 0)
+[2025-07-25T07:10:34.446+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.517+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.556+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARMAC4T1187FB3FA4C', 'The Dillinger Escape Plan', 40.82624, -74.47995, 'Morris Plains, NJ', 'SOBBUGU12A8C13E95D', 'Setting Fire to Sleeping Giants', 207.77751, 2004)
+[2025-07-25T07:10:34.559+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.602+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.631+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR47JEX1187B995D81', 'SUE THOMPSON', 37.83721, -94.35868, 'Nevada, MO', 'SOBLGCN12AB0183212', 'James (Hold The Ladder Steady)', 124.86485, 1985)
+[2025-07-25T07:10:34.635+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.715+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.745+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARGIWFO1187B9B55B7', 'Five Bolt Main', None, None, '', 'SOPSWQW12A6D4F8781', 'Made Like This (Live)', 225.09669, 0)
+[2025-07-25T07:10:34.748+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.811+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.846+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARNTLGG11E2835DDB9', 'Clp', None, None, '', 'SOZQDIU12A58A7BCF6', 'Superconfidential', 338.31138, 0)
+[2025-07-25T07:10:34.864+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:34.911+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:34.928+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARDNS031187B9924F0', 'Tim Wilson', 32.67828, -83.22295, 'Georgia', 'SONYPOM12A8C13B2D7', 'I Think My Wife Is Running Around On Me (Taco Hell)', 186.48771, 2005)
+[2025-07-25T07:10:34.932+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.025+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.130+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AROUOZZ1187B9ABE51', 'Willie Bobo', 40.79195, -73.94512, 'New York, NY [Spanish Harlem]', 'SOBZBAZ12A6D4F8742', 'Spanish Grease', 168.25424, 1997)
+[2025-07-25T07:10:35.134+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.217+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.252+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARH4Z031187B9A71F2', 'Faye Adams', 40.73197, -74.17418, 'Newark, NJ', 'SOVYKGO12AB0187199', 'Crazy Mixed Up World', 156.39465, 1961)
+[2025-07-25T07:10:35.263+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.349+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.414+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARB29H41187B98F0EF', 'Terry Callier', 41.88415, -87.63241, 'Chicago', 'SOGNCJP12A58A80271', 'Do You Finally Need A Friend', 342.56934, 1972)
+[2025-07-25T07:10:35.417+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.482+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.515+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR1Y2PT1187FB5B9CE', 'John Wesley', 27.94017, -82.32547, 'Brandon', 'SOLLHMX12AB01846DC', 'The Emperor Falls', 484.62322, 0)
+[2025-07-25T07:10:35.538+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.615+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.661+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARAJPHH1187FB5566A', 'The Shangri-Las', 40.7038, -73.83168, 'Queens, NY', 'SOYTPEP12AB0180E7B', 'Twist and Shout', 164.80608, 1964)
+[2025-07-25T07:10:35.675+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.768+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.827+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR0RCMP1187FB3F427', 'Billie Jo Spears', 30.08615, -94.10158, 'Beaumont, TX', 'SOGXHEG12AB018653E', 'It Makes No Difference Now', 133.32853, 1992)
+[2025-07-25T07:10:35.831+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:35.926+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:35.971+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AREBBGV1187FB523D2', "Mike Jones (Featuring CJ_ Mello & Lil' Bran)", None, None, 'Houston, TX', 'SOOLYAZ12A6701F4A6', 'Laws Patrolling (Album Version)', 173.66159, 0)
+[2025-07-25T07:10:35.978+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.038+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:36.075+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARGUVEV1187B98BA17', 'Sierra Maestra', None, None, '', 'SOGOSOV12AF72A285E', '¿Dónde va Chichi?', 313.12934, 1997)
+[2025-07-25T07:10:36.079+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.181+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:36.216+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARD7TVE1187B99BFB1', 'Casual', None, None, 'California - LA', 'SOQLGFP12A58A7800E', 'OAKtown', 259.44771, 0)
+[2025-07-25T07:10:36.227+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.314+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:36.370+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR3JMC51187B9AE49D', 'Backstreet Boys', 28.53823, -81.37739, 'Orlando, FL', 'SOPVXLX12A8C1402D5', 'Larger Than Life', 236.25098, 1999)
+[2025-07-25T07:10:36.378+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.502+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:36.534+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARPBNLO1187FB3D52F', 'Tiny Tim', 40.71455, -74.00712, 'New York, NY', 'SOAOIBZ12AB01815BE', 'I Hold Your Hand In Mine [Live At Royal Albert Hall]', 43.36281, 2000)
+[2025-07-25T07:10:36.547+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.705+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:36.750+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR9AWNF1187B9AB0B4', 'Kenny G featuring Daryl Hall', None, None, 'Seattle, Washington USA', 'SOZHPGD12A8C1394FE', 'Baby Come To Me', 236.93016, 0)
+[2025-07-25T07:10:36.753+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.857+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:36.894+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AROGWRA122988FEE45', 'Christos Dantis', None, None, '', 'SOSLAVG12A8C13397F', 'Den Pai Alo', 243.82649, 0)
+[2025-07-25T07:10:36.903+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:36.970+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:37.030+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARMBR4Y1187B9990EB', 'David Martin', 37.77916, -122.42005, 'California - SF', 'SOTTDKS12AB018D69B', 'It Wont Be Christmas', 241.47546, 0)
+[2025-07-25T07:10:37.033+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:37.173+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:37.214+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARQ9BO41187FB5CF1F', 'John Davis', 40.99471, -77.60454, 'Pennsylvania', 'SOMVWWT12A58A7AE05', 'Knocked Out Of The Park', 183.17016, 0)
+[2025-07-25T07:10:37.217+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:37.449+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:37.557+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARKULSX1187FB45F84', 'Trafik', 39.49974, -111.54732, 'Utah', 'SOQVMXR12A81C21483', 'Salt In NYC', 424.12363, 0)
+[2025-07-25T07:10:37.568+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:37.701+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:37.734+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARI2JSK1187FB496EF', 'Nick Ingman;Gavyn Wright', 51.50632, -0.12714, 'London, England', 'SODUJBS12A8C132150', 'Wessex Loses a Bride', 111.62077, 0)
+[2025-07-25T07:10:37.737+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:37.803+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:37.846+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AREDBBQ1187B98AFF5', 'Eddie Calvert', None, None, '', 'SOBBXLX12A58A79DDA', 'Erica (2005 Digital Remaster)', 138.63138, 0)
+[2025-07-25T07:10:37.853+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.003+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.052+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR7ZKHQ1187B98DD73', 'Glad', None, None, '', 'SOTUKVB12AB0181477', 'Blessed Assurance', 270.602, 1993)
+[2025-07-25T07:10:38.054+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.151+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.186+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARBGXIG122988F409D', 'Steel Rain', 37.77916, -122.42005, 'California - SF', 'SOOJPRH12A8C141995', 'Loaded Like A Gun', 173.19138, 0)
+[2025-07-25T07:10:38.192+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.256+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.284+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR7SMBG1187B9B9066', 'Los Manolos', None, None, '', 'SOBCOSW12A8C13D398', 'Rumba De Barcelona', 218.38322, 0)
+[2025-07-25T07:10:38.289+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.357+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.390+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARGCY1Y1187B9A4FA5', 'Gloriana', 36.16778, -86.77836, 'Nashville, TN.', 'SOQOTLQ12AB01868D0', 'Clementina Santafè', 153.33832, 0)
+[2025-07-25T07:10:38.393+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.475+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.522+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR36F9J1187FB406F1', 'Bombay Rockers', 56.27609, 9.51695, 'Denmark', 'SOBKWDJ12A8C13B2F3', 'Wild Rose (Back 2 Basics Mix)', 230.71302, 0)
+[2025-07-25T07:10:38.535+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.619+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.668+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARNNKDK1187B98BBD5', 'Jinx', 45.80726, 15.9676, 'Zagreb Croatia', 'SOFNOQK12AB01840FC', 'Kutt Free (DJ Volume Remix)', 407.37914, 0)
+[2025-07-25T07:10:38.676+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.744+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.769+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR62SOJ1187FB47BB5', 'Chase & Status', None, None, '', 'SOGVQGJ12AB017F169', 'Ten Tonne', 337.68444, 2005)
+[2025-07-25T07:10:38.773+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:38.853+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:38.903+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARBEBBY1187B9B43DB', 'Tom Petty', None, None, 'Gainesville, FL', 'SOFFKZS12AB017F194', 'A Higher Place (Album Version)', 236.17261, 1994)
+[2025-07-25T07:10:38.907+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:39.002+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:39.045+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARDR4AC1187FB371A1', 'Montserrat Caballé;Placido Domingo;Vicente Sardinero;Judith Blegen;Sherrill Milnes;Georg Solti', None, None, '', 'SOBAYLL12A8C138AF9', 'Sono andati? Fingevo di dormire', 511.16363, 0)
+[2025-07-25T07:10:39.049+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:39.134+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:39.176+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARAGB2O1187FB3A161', 'Pucho & His Latin Soul Brothers', None, None, '', 'SOLEYHO12AB0188A85', 'Got My Mojo Workin', 338.23302, 0)
+[2025-07-25T07:10:39.178+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:39.252+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:39.290+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AREDL271187FB40F44', 'Soul Mekanik', None, None, '', 'SOPEGZN12AB0181B3D', 'Get Your Head Stuck On Your Neck', 45.66159, 0)
+[2025-07-25T07:10:39.301+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:39.384+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:39.449+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARP6N5A1187B99D1A3', 'Mitch Ryder', None, None, 'Hamtramck, MI', 'SOXILUQ12A58A7C72A', 'Jenny Take a Ride', 207.43791, 2004)
+[2025-07-25T07:10:39.461+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:39.587+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:39.627+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARGSAFR1269FB35070', 'Blingtones', None, None, '', 'SOTCKKY12AB018A141', 'Sonnerie lalaleulé hi houuu', 29.54404, 0)
+[2025-07-25T07:10:39.646+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:39.850+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:39.914+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARULZCI1241B9C8611', 'Luna Orbit Project', None, None, '', 'SOSWKAV12AB018FC91', 'Midnight Star', 335.51628, 0)
+[2025-07-25T07:10:39.935+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:40.040+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:40.090+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR0IAWL1187B9A96D0', 'Danilo Perez', 8.4177, -80.11278, 'Panama', 'SONSKXP12A8C13A2C9', 'Native Soul', 197.19791, 2003)
+[2025-07-25T07:10:40.109+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:40.215+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:40.298+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARJIE2Y1187B994AB7', 'Line Renaud', None, None, '', 'SOUPIRU12A6D4FA1E1', 'Der Kleine Dompfaff', 152.92036, 0)
+[2025-07-25T07:10:40.306+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:40.489+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:40.590+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARLTWXK1187FB5A3F8', 'King Curtis', 32.74863, -97.32925, 'Fort Worth, TX', 'SODREIN12A58A7F2E5', 'A Whiter Shade Of Pale (Live @ Fillmore West)', 326.00771, 0)
+[2025-07-25T07:10:40.595+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:40.710+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:40.761+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARNF6401187FB57032', 'Sophie B. Hawkins', 40.79086, -73.96644, 'New York, NY [Manhattan]', 'SONWXQJ12A8C134D94', 'The Ballad Of Sleeping Beauty', 305.162, 1994)
+[2025-07-25T07:10:40.777+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:40.864+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:40.918+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARPFHN61187FB575F6', 'Lupe Fiasco', 41.88415, -87.63241, 'Chicago, IL', 'SOWQTQZ12A58A7B63E', 'Streets On Fire (Explicit Album Version)', 279.97995, 0)
+[2025-07-25T07:10:40.946+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.078+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:41.119+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR051KA1187B98B2FF', 'Wilks', None, None, '', 'SOLYIBD12A8C135045', 'Music is what we love', 261.51138, 0)
+[2025-07-25T07:10:41.128+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.231+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:41.268+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR8IEZO1187B99055E', 'Marc Shaiman', None, None, '', 'SOINLJW12A8C13314C', 'City Slickers', 149.86404, 2008)
+[2025-07-25T07:10:41.279+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.433+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:41.470+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AR558FS1187FB45658', '40 Grit', None, None, '', 'SOGDBUF12A8C140FAA', 'Intro', 75.67628, 2003)
+[2025-07-25T07:10:41.473+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.576+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:41.617+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARVBRGZ1187FB4675A', 'Gwen Stefani', None, None, '', 'SORRZGD12A6310DBC3', 'Harajuku Girls', 290.55955, 2004)
+[2025-07-25T07:10:41.634+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.725+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:41.763+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'ARWB3G61187FB49404', 'Steve Morse', None, None, 'Hamilton, Ohio', 'SODAUVL12A8C13D184', 'Prognosis', 363.85914, 2000)
+[2025-07-25T07:10:41.765+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.859+0000] {base.py:84} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-07-25T07:10:41.877+0000] {sql.py:487} INFO - Running statement: 
+    INSERT INTO public.staging_songs (
+        num_songs, artist_id, artist_name, artist_latitude, artist_longitude, artist_location, song_id, title, duration, "year"
+    ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    , parameters: (1, 'AREVWGE1187B9B890A', 'Bitter End', -13.442, -41.9952, 'Noci (BA)', 'SOFCHDR12AB01866EF', 'Living Hell', 282.43546, 0)
+[2025-07-25T07:10:41.882+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-07-25T07:10:41.890+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-25T07:10:41.892+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-25T07:10:41.921+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=tunestream_etl_pipeline, task_id=Stage_songs, run_id=scheduled__2025-07-24T10:00:00+00:00, execution_date=20250724T100000, start_date=20250725T071031, end_date=20250725T071041
+[2025-07-25T07:10:42.048+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-25T07:10:42.087+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/models/baseoperator.py:1297: AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+  result = cls.__new__(cls)
+
+[2025-07-25T07:10:42.155+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-25T07:10:42.172+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
