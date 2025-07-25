@@ -206,3 +206,24 @@ After that, click on the DAG to trigger it manually. If you see a screen like th
 <img width="1895" height="943" alt="all_task_success_run" src="https://github.com/user-attachments/assets/bbcead30-9c20-4555-8b8f-7989872a4195" />
 
 Then 🎉 congratulations! Your DAG is up and running. Now go and write documentation 😁
+
+## 5. Debugging and common errors
+Now, if your DAG looks like this:
+
+<img width="1494" height="814" alt="image" src="https://github.com/user-attachments/assets/6547391d-7faf-4292-b4ac-970e33b1c875" />
+
+Don't panic yet. There's a very helpful way to debug:
+1. On the current run, switch to graph view.
+2. Select **Audit log**.
+3. View the log information. The log inside often contain critical information on how to fix.
+
+### Some common errors:
+| Error Message | Cause | Resolution |
+| :--- | :--- | :--- |
+| **`Connection refused`** | Airflow was attempting to connect to a separate, standalone PostgreSQL container that was not on the same Docker network. The connection was actively rejected. | The standalone database was abandoned. A full reset of the Airflow environment (`docker-compose down --volumes`) was performed to start the integrated PostgreSQL container, ensuring all services were on the same network. |
+| **`The conn_id 'postgres_default' isn't defined`** | The automatic Airflow initialization (`airflow-init`) failed to create the default database connection in the UI. | The connection was created manually in the Airflow UI (**Admin -> Connections**) with the correct parameters, most importantly setting the **Host** to `postgres`, which is the internal network alias for the database container. |
+| **`invalid input syntax for type integer: ""`** | A "Logged Out" event in the `log_data` contained an empty string (`''`) for the `userId`, which cannot be inserted into an `INTEGER` column. | A data cleaning step was added to the `load_logs_into_table` Python function to check for `userId == ''` and convert it to `None` before insertion, allowing it to be stored as a `NULL` value. |
+| **`operator does not exist: integer \|\| timestamp`** | PostgreSQL does not have a built-in operator to concatenate (`\|\|`) an `INTEGER` (`sessionid`) and a `TIMESTAMP` (`start_time`) directly. | The SQL query for `songplay_table_insert` was modified to `CAST` both `sessionid` and `start_time` to `TEXT` before the concatenation, allowing them to be combined for the `md5` hash. |
+| **`duplicate key value violates unique constraint`** | The `INSERT` statements were not idempotent. Re-running the DAG caused duplicate data to be inserted into tables with primary key constraints. This happened in the `users` table (due to changing user levels) and the `time` table (due to multiple events at the same timestamp). | **1. Idempotency**: `TRUNCATE TABLE` commands were added to the beginning of every data loading task (both staging and final tables) to ensure each run starts fresh.<br>**2. Unique Users**: The `user_table_insert` query was rewritten using a `ROW_NUMBER()` window function to select only the most recent record for each user.<br>**3. Unique Timestamps**: The `time_table_insert` query was modified to select from a subquery of `DISTINCT start_time` values from the `songplays` table. |
+
+
