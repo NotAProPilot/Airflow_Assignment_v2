@@ -9,7 +9,13 @@ from airflow.exceptions import AirflowException
 import json
 import os
 
+"""The insert statements alongside the file. 
 
+Please note that I have made the following changes to the insert statements:
+
+1. Add `TRUNCATE TABLE` before adding any data. I found out the hard way that this table has a lot of 'unique' constraint,
+so just to be safe, I have add a lot of truncate statement to de-d
+"""
 class SqlQueries:
     songplay_table_insert = ("""
         TRUNCATE TABLE songplays;
@@ -166,7 +172,7 @@ default_args = {
     'owner': 'QuangBLM1',
     'depends_on_past': False,
     'start_date': datetime(2025, 7, 24),
-    'retries': 1,
+    'retries': 3,
     'retry_delay': timedelta(seconds=5),
     'email_on_retry': False,
     'catchup': False,
@@ -176,7 +182,7 @@ with DAG(
     dag_id='tunestream_etl_pipeline',
     default_args=default_args,
     description='Load and transform data in PostgreSQL with Airflow',
-    schedule_interval=None, #'@hourly'
+    schedule_interval='@hourly'
 ) as dag:
 
     begin_execution = EmptyOperator(task_id='Begin_execution')
