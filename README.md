@@ -47,3 +47,14 @@ During testing, two dimension tables failed with UniqueViolation errors, which r
 | `time` | The source `songplays` table can contain multiple song play events that occur at the exact same timestamp. Since `start_time` is the primary key of the `time` table, this caused a unique constraint violation. | The query was modified to select from a subquery that gets only the `DISTINCT start_time` values from the `songplays` table, ensuring that each timestamp is inserted only once. |
 
 ## 2. Creaing table
+Now, assuming you are in the root directory (which contains `dag` and so on), do the following steps:
+
+1. Move the provided `create_tables.sql` into a folder named `sql`.
+2. In the root dir, open Powershell/CMD, and type in `docker exec -i (Container ID of built-in Airflow Postgres) psql -U airflow -d airflow < sql\create_tables.sql`
+3. If you see 6 `CREATE TABLE` statements in the CLI, congrats, process is completed.
+
+### How to find Container ID?
+Type `docker ps`. It'll shows something like this:
+<img width="1811" height="179" alt="image" src="https://github.com/user-attachments/assets/f697176f-7303-435f-944a-adf5d9cd4140" />
+
+Find the ID for `postgres:13`. 
