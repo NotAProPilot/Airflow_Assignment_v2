@@ -90,7 +90,7 @@ def load_songs_into_staging_table(**kwargs):
     insert_statement = "INSERT INTO public.staging_songs VALUES (%s, %s, ...)"
     
     # Recursively find and process every JSON file in the source directory
-    For each file in find_all_files(song_data_directory, ending_in=".json"):
+    for each_file in find_all_files(song_data_directory, ending_in=".json"):
         
         # Read the file and parse its contents as a JSON object
         song_data = parse_json(file)
